@@ -84,6 +84,13 @@ main:
 
 	mov	si, msg_hello
 	call	savs
+	
+readstuff:
+	mov	ah, 0
+	int	0x16
+	mov	ah, 0x0E
+	int	0x10
+	jmp	readstuff
 	cli			;disables interrupts
 	hlt
 
